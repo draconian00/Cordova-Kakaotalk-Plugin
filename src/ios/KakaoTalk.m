@@ -19,11 +19,13 @@
                     // success
                     NSLog(@"userId=%@", result.ID);
                     NSLog(@"nickName=%@", [result propertyForKey:@"nickname"]);
+                    NSLog(@"thumbnailImage=%@", [result propertyForKey:@"thumbnail_image"]);
                     NSLog(@"profileImage=%@", [result propertyForKey:@"profile_image"]);
                     
                     NSDictionary *userSession = @{
                                           @"id": result.ID,
                                           @"nickname": [result propertyForKey:@"nickname"],
+                                          @"thumbnail_image": [result propertyForKey:@"thumbnail_image"],
                                           @"profile_image": [result propertyForKey:@"profile_image"]};
                     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:userSession];
                 } else {
